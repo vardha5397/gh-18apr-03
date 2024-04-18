@@ -1,12 +1,12 @@
 name: LintTestPerformin
 on:
     workflow_dispatch:
-    push:
+    push: #Events
         branches:   #Events Branch Filters
             - main
             - 'dev-*'  #dev-new dev-test
             - 'feature/**' #feature/new feature/new/branch
-        #paths-ignore:
+        #paths-ignore:  
              #- '.github/workflows/*'
              
     pull_request: #Events
