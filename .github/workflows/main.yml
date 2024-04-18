@@ -2,7 +2,7 @@ name: LintTestPerformin
 on:
     workflow_dispatch:
     push:
-        branches:
+        branches:   #Events Branch Filters
             - main
             - 'dev-*'  #dev-new dev-test
             - 'feature/**' #feature/new feature/new/branch
