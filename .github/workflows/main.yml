@@ -9,11 +9,11 @@ on:
         #paths-ignore:
              #- '.github/workflows/*'
              
-    pull_request:
-        types:
+    pull_request: #Events
+        types:    #Event Activity Types
             - opened
             - closed
-        branches:
+        branches:   #Event Activity Branch Filters
                     - main
                     - 'dev-*'  #dev-new dev-test
                     - 'feature/**' #feature/new feature/new/branch
