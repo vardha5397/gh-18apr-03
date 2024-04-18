@@ -1,6 +1,11 @@
 name: LintTestPerformin
 on:
-    push
+    workflow_dispatch:
+    push:
+    pull_request:
+        types:
+            - opened
+            - closed
 jobs:
        mainjob:
             runs-on: 'ubuntu-latest'
