@@ -1,0 +1,23 @@
+name: LintTestPerformin
+on:
+    push
+jobs:
+       mainjob:
+            runs-on: 'ubuntu-latest'
+            steps:
+                - name: Get Github Context
+                  run: echo "${{toJson(github)}}"
+                - name: checkout the code
+                  uses: actions/checkout@v4
+                  with:
+                       fetch-depth: 0
+                - name: Intsall node JS
+                  uses: actions/setup-node@v4
+                  with:
+                        node-version: '18'
+                - name: Installing dependencies
+                  run: npm ci
+                - name: Perform Lint testing
+                  run: npm run lint
+                - name: Perform Build
+                  run: npm run build
