@@ -2,10 +2,21 @@ name: LintTestPerformin
 on:
     workflow_dispatch:
     push:
+        branches:
+            - main
+            - 'dev-*'  #dev-new dev-test
+            - 'feature/**' #feature/new feature/new/branch
+        #paths-ignore:
+             #- '.github/workflows/*'
+             
     pull_request:
         types:
             - opened
             - closed
+        branches:
+                    - main
+                    - 'dev-*'  #dev-new dev-test
+                    - 'feature/**' #feature/new feature/new/branch
 jobs:
        mainjob:
             runs-on: 'ubuntu-latest'
